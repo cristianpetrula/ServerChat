@@ -1,9 +1,18 @@
 "use strict";
 
 process.title = 'Chat Server with Node.js';
+process.on('uncaughtException', function (err)
+{
+    log.debug( "ERROR: " + err.stack);
+    console.error( err.stack);
+});
 
 // Port where we'll run the websocket server
 var webSocketsServerPort = 1337;
+
+var fs = require('fs')
+    , Log = require('log')
+    , log = new Log('debug', fs.createWriteStream('serverChat.log'));
 
 // websocket and http servers
 var webSocketServer = require('websocket').server;
@@ -119,12 +128,21 @@ function leaveChannel( channel, nickname)
     if ( pos != -1)
     {
         channel.participants = remove( channel.participants, pos);
-        sendToAll( channel, nickname + " has left " + channel.name);
+        var msg = {
+            cmd: "userleft",
+            message: nickname + " has left " + channel.name,
+            channel: channel.name,
+            nickname: nickname,
+            time: (new Date()).getTime()
+        }
+
+        sendToAll( channel.name, JSON.stringify( msg));
     }
 }
 
 function storeNickName( connection, nickname)
 {
+    log.debug( "Store nickname " + nickname);
     var found = false;
     for (var i=0; i < clients.length; i++)
     {
@@ -136,7 +154,7 @@ function storeNickName( connection, nickname)
     }
     if ( !found)
     {
-        console.log("Connection not found.");
+        log.debug( "Connection not found to store nickname.");
     }
 }
 function checkIfParticipantExists( participants, nickname)
@@ -152,6 +170,7 @@ function checkIfParticipantExists( participants, nickname)
 }
 function joinChannel(channel, nickname)
 {
+    log.debug( "join channel " + channel + " nickname: " + nickname);
     var found = false;
     for (var i=0; i < channels.length; i++)
     {
@@ -177,6 +196,7 @@ function joinChannel(channel, nickname)
         participants.push( participant);
         var history = [];
         var msg = "Channel " + channel + " was created by " + nickname;
+        log.debug( msg);
         var obj = {
             time: (new Date()).getTime(),
             text: msg
@@ -215,6 +235,7 @@ function randomString(bits)
 
 function validateNick( nickname)
 {
+    log.debug( "Validate nickname " + nickname);
     if ( nickname == null)
     {
         return false;
@@ -234,8 +255,41 @@ function validateNick( nickname)
 
 function removeClient( username)
 {
+    log.debug( "Remove client " + username);
     var index = getClientIndexByNickname( username);
+    log.debug( "Remove client index " + index);
     clients = remove( clients, index);
+}
+
+function sendParticipants( userName, channel)
+{
+    log.debug( "Send participants from channel " + channel + " to username: " + userName);
+    var ch = getChannel( channel);
+    var participants = [];
+    for( var i = 0; i < ch.participants.length; i++)
+    {
+        var participant = {
+            nickname: ch.participants[i].val
+        }
+        participants.push( participant);
+    }
+    var msg = {
+        cmd: "participants",
+        participants: participants,
+        channel: channel
+    }
+
+    var obj = JSON.stringify( msg);
+    sendToParticipant( userName, obj);
+}
+
+function sendToParticipant( username, message)
+{
+    var client = getClientByNickname( username);
+    if ( client != null)
+    {
+        client.sendUTF( message);
+    }
 }
 /**
  * HTTP server
@@ -244,6 +298,7 @@ var server = http.createServer(function(request, response) {
     // Not important for us. We're writing WebSocket server, not HTTP server
 });
 server.listen(webSocketsServerPort, function() {
+    log.debug( "Server is listening on port " + webSocketsServerPort);
     console.log((new Date()) + " Server is listening on port " + webSocketsServerPort);
 });
 
@@ -258,7 +313,7 @@ var wsServer = new webSocketServer({
 // This callback function is called every time someone
 // tries to connect to the WebSocket server
 wsServer.on('request', function(request) {
-    console.log((new Date()) + ' Connection from origin ' + request.origin + '.');
+    log.debug( ' Connection from origin ' + request.origin + '.');
 
     // accept connection - you should check 'request.origin' to make sure that
     // client is connecting from your website
@@ -272,23 +327,23 @@ wsServer.on('request', function(request) {
         token : token,
         nick : ''
     }
-
+    clients.push( client);
     var userName = false;
-
-    console.log((new Date()) + ' Connection accepted.');
+    log.debug( 'Connection accepted.');
 
     // user sent some message
     connection.on('message', function(message) {
 
         if (message.type === 'utf8') { // accept only text
-            console.log("Message from client: " + message.utf8Data + "\n");
+            log.debug( "Message from client: " + message.utf8Data);
 
             var msg = JSON.parse( message.utf8Data);
-            var cmd = msg.cmd;
+            var cmd = msg.cmd.toLowerCase();
             var arg = msg.args;
 
             if ( cmd == "setnick")
             {
+                log.debug( "setnick command");
                 userName = arg;
                 if ( validateNick(userName))
                 {
@@ -314,6 +369,7 @@ wsServer.on('request', function(request) {
             }
             else if ( cmd == "sendmessage")
             {
+                log.debug( "sendmessage command");
                 userName = identifyNickname(this);
                 ch = msg.channel;
                 var obj = {
@@ -329,13 +385,15 @@ wsServer.on('request', function(request) {
             }
             else if ( cmd == "joinchannel")
             {
+                log.debug( "joinchannel command");
                 userName = identifyNickname(this);
                 var channel = arg;
                 joinChannel( channel, userName);
                 var obj = {
-                    cmd: 'newmessage',
+                    cmd: 'userjoin',
                     message: userName + ' joined',
                     channel: channel,
+                    nickname: userName,
                     time: (new Date()).getTime()
                 };
                 var obj2 = JSON.stringify( obj);
@@ -345,7 +403,13 @@ wsServer.on('request', function(request) {
                 {
                  connection.sendUTF(JSON.stringify( { cmd: 'history', data: ch.history, channel: channel} ));
                 }
+                sendParticipants( userName, channel);
                 sendToAll( channel, obj2);
+            }
+            else if ( cmd = "getparticipants")
+            {
+                userName = identifyNickname(this);
+                sendParticipants( userName, arg);
             }
         }
     });
@@ -353,8 +417,7 @@ wsServer.on('request', function(request) {
     // user disconnected
     connection.on('close', function(connection)
     {
-        console.log((new Date()) + " Peer "
-            + connection.remoteAddress + " disconnected.");
+        log.debug( " Peer " + connection.remoteAddress + " disconnected.");
         // remove user from the list of connected clients
         userName = identifyNickname(this);
         removeClient( userName);

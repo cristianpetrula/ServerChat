@@ -1,0 +1,105 @@
+[Mon May 28 2012 16:09:23 GMT+0300 (GTB Daylight Time)] DEBUG Server is listening on port 1337
+[Mon May 28 2012 16:09:39 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:09:39 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"cristian"}
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Channel YonderIasi was created by cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Channel Yonder was created by cristian
+[Mon May 28 2012 16:09:42 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: cristian
+[Mon May 28 2012 16:10:01 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:10:01 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"lavi"}
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname lavi
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname lavi
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: lavi
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: lavi
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: lavi
+[Mon May 28 2012 16:10:04 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: lavi
+[Mon May 28 2012 16:10:06 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:10:06 GMT+0300 (GTB Daylight Time)] DEBUG Remove client lavi
+[Mon May 28 2012 16:10:06 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 1
+[Mon May 28 2012 16:10:32 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:10:32 GMT+0300 (GTB Daylight Time)] DEBUG Remove client cristian
+[Mon May 28 2012 16:10:32 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 0
+[Mon May 28 2012 16:10:56 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:10:56 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"cristian"}
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname cristian
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname cristian
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: cristian
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: cristian
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: cristian
+[Mon May 28 2012 16:10:59 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: cristian
+[Mon May 28 2012 16:11:04 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:11:04 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"lavinia"}
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname lavinia
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname lavinia
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: lavinia
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: lavinia
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: lavinia
+[Mon May 28 2012 16:11:07 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: lavinia
+[Mon May 28 2012 16:11:09 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:11:09 GMT+0300 (GTB Daylight Time)] DEBUG Remove client lavinia
+[Mon May 28 2012 16:11:09 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 1
+[Mon May 28 2012 16:11:29 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:11:29 GMT+0300 (GTB Daylight Time)] DEBUG Remove client cristian
+[Mon May 28 2012 16:11:29 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 0
+[Mon May 28 2012 16:20:37 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:20:37 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"cristian"}
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname cristian
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname cristian
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: cristian
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: cristian
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: cristian
+[Mon May 28 2012 16:20:40 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: cristian
+[Mon May 28 2012 16:20:45 GMT+0300 (GTB Daylight Time)] DEBUG  Connection from origin http://127.0.0.1:3030.
+[Mon May 28 2012 16:20:45 GMT+0300 (GTB Daylight Time)] DEBUG Connection accepted.
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"setnick","args":"lavinia"}
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG setnick command
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Validate nickname lavinia
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Store nickname lavinia
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"YonderIasi"}
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG join channel YonderIasi nickname: lavinia
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel YonderIasi to username: lavinia
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Message from client: {"cmd":"joinchannel","args":"Yonder"}
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG joinchannel command
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG join channel Yonder nickname: lavinia
+[Mon May 28 2012 16:20:48 GMT+0300 (GTB Daylight Time)] DEBUG Send participants from channel Yonder to username: lavinia
+[Mon May 28 2012 16:20:52 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:20:52 GMT+0300 (GTB Daylight Time)] DEBUG Remove client lavinia
+[Mon May 28 2012 16:20:52 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 1
+[Mon May 28 2012 16:21:12 GMT+0300 (GTB Daylight Time)] DEBUG  Peer undefined disconnected.
+[Mon May 28 2012 16:21:12 GMT+0300 (GTB Daylight Time)] DEBUG Remove client cristian
+[Mon May 28 2012 16:21:12 GMT+0300 (GTB Daylight Time)] DEBUG Remove client index 0
